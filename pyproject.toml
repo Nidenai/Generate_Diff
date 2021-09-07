@@ -2,7 +2,7 @@
 name = "hexlet-code"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Nidenai <dimsknz@gmail.com>"]
 packages = [
   { include = "gendiff" },
 ]
@@ -11,6 +11,10 @@ packages = [
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
+autopep8 = "^1.5.7"
+pytest = "^6.2.3"
+pytest-cov = "^2.11.1"
+wemake-python-styleguide = "^0.15.2"
 
 
 [build-system]
