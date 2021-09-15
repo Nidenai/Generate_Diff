@@ -33,7 +33,7 @@ gendiff:
 
 
 go:
-	poetry run gendiff -f j examples/file_one.json examples/file_one.json
+	poetry run gendiff -f j examples/file_one.json examples/file_two.json
 
 
 start:
