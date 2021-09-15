@@ -25,3 +25,12 @@ def generate_diff(file_one, file_two):
 
 def load_file(file_path):
     return json.load(open(file_path))
+
+
+def is_json(file1, file2)
+    return file1.endswith(".json") and file2.endswith(".json")
+
+
+def is_yaml(file1, file2):
+    return file1.endswith((".yaml", ".yml")) and \
+        file2.endswith((".yaml", ".yml"))
