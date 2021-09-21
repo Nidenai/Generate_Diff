@@ -31,3 +31,9 @@ go:
 
 start:
 	export PATH="$HOME/.poetry/bin:$PATH"
+
+
+go_yaml:
+	poetry run gendiff -f j examples/file_one.yaml examples/file_two.yaml
+
+make test:
