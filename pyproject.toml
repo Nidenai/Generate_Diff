@@ -7,6 +7,11 @@ packages = [
   { include = "gendiff" },
 ]
 
+
+[tool.poetry.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
+
+
 [tool.poetry.dependencies]
 python = "^3.8"
 
@@ -22,5 +27,3 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 
-[tool.poetry.scripts]
-gendiff = "gendiff.scripts.gendiff:main"
