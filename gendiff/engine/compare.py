@@ -1,12 +1,19 @@
 import argparse
 from gendiff.engine.parsing import generate_diff
+from gendiff.formats import stylish
+from gendiff.formats import json
+
+FORMATS = {
+    "stylish": stylish.render,
+    'json': json.render
+}
 
 
 def run():
     parser = argparse.ArgumentParser(description='Generate diff')
     parser.add_argument('first_file')
     parser.add_argument('second_file')
-    parser.add_argument('-f', metavar='FORMAT', help='set format of output')
+    parser.add_argument("-f", "--format", choices=FORMATS.keys(), default="stylish", help='output format (default: "stylish")')
     parsing(parser.parse_args())
 
 

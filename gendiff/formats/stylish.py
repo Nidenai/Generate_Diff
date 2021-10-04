@@ -5,10 +5,6 @@ STATUS = {
 }
 
 
-def render(data):
-    return edit_message(to_string(format(data)))
-
-
 def format(data):
     result = {}
     for item in data.keys():
@@ -50,3 +46,7 @@ def edit_message(message):
     if "None" in message:
         message = message.replace("None", "null")
     return message
+
+
+def render(data):
+    return edit_message(to_string(format(data)))

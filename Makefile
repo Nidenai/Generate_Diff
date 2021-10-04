@@ -26,7 +26,11 @@ all:
 
 
 go:
-	poetry run gendiff -f j examples/file_one.json examples/file_two.json
+	poetry run gendiff -f stylish examples/file_one.json examples/file_two.json
+
+
+gogo:
+	poetry run gendiff -f stylish examples/file1_rec.json examples/file2_rec.json
 
 
 start:
@@ -35,6 +39,6 @@ start:
 
 
 go_yaml:
-	poetry run gendiff -f j examples/file_one.yaml examples/file_two.yaml
+	poetry run gendiff -f examples/file_one.yaml examples/file_two.yaml
 
 
