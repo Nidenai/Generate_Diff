@@ -39,6 +39,6 @@ start:
 
 
 go_yaml:
-	poetry run gendiff -f examples/file_one.yaml examples/file_two.yaml
+	poetry run gendiff -f stylish examples/file_one.yaml examples/file_two.yaml
 
 
