@@ -3,6 +3,7 @@ from gendiff.engine.parsing import generate_diff
 from gendiff.formats import stylish
 from gendiff.formats import json
 from gendiff.formats import plain
+from gendiff.engine.engine import get_data
 
 FORMATS = {
     "stylish": stylish.render,
@@ -11,7 +12,7 @@ FORMATS = {
 }
 
 
-def parsing_args():
+def gendiff():
     parser = argparse.ArgumentParser(description='Generate diff')
     parser.add_argument('first_file')
     parser.add_argument('second_file')
@@ -23,10 +24,20 @@ def parsing_args():
 
 def generation(file1, file2, format_name='stylish'):
     file1, file2 = parsing(file1, file2)
-    return FORMATS[format_name](get_diff(file1, file2))
+    return FORMATS[format_name](get_data(file1, file2))
 
 
-def parsing(args):
-    return generate_diff(args.first_file, args.second_file))
+def parsing(file1, file2):
+    return generate_diff(file1, file2)
+
+
+def run():
+    parser = gendiff()
+    diff = generation(
+        parser.first_file,
+        parser.second_file,
+        parser.format
+    )
+    print(diff)
 
 
