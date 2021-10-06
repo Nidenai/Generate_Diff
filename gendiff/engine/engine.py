@@ -20,23 +20,23 @@ def key_remained(before, after):
     if before == after:
         status = "no change"
         if is_child(before):
-            value = ["children", get_diff(before, after)]
+            value = ["children", get_data(before, after)]
         else:
             value = ["value", before]
     else:
         status = "changed"
         if is_child(before) and is_child(after):
             status = "no change"
-            value = ["children", get_diff(before, after)]
+            value = ["children", get_data(before, after)]
         elif is_child(before):
             value = [
-                ["children", get_diff(before, before)],
+                ["children", get_data(before, before)],
                 ["value", after]
             ]
         elif is_child(after):
             value = [
                 ["value", before],
-                ["children", get_diff(after, after)]
+                ["children", get_data(after, after)]
             ]
         else:
             value = [["value", before], ["value", after]]
@@ -45,7 +45,7 @@ def key_remained(before, after):
 
 def key_in_one_file(data, status):
     if is_child(data):
-        return status, ["children", get_diff(data, data)]
+        return status, ["children", get_data(data, data)]
     return status, ["value", data]
 
 
