@@ -1,5 +1,5 @@
-from json import dumps
+import json
 
 
 def render(data):
-    return dumps(data, indent=2)
+    return json.dumps(data, indent=2)
