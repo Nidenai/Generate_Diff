@@ -6,5 +6,5 @@
 
 [![Actions Status](https://github.com/Nidenai/python-project-lvl2/workflows/python-package/badge.svg)](https://github.com/Nidenai/python-project-lvl2/actions)
 
-
+        
 [![asciicast](https://asciinema.org/a/CEMfCZGP6srPQMWcUep5ggi8W.svg)](https://asciinema.org/a/CEMfCZGP6srPQMWcUep5ggi8W)
