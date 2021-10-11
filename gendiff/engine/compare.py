@@ -39,5 +39,3 @@ def run():
         parser.format
     )
     print(diff)
-
-
