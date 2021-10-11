@@ -6,8 +6,14 @@
 
 [![Actions Status](https://github.com/Nidenai/python-project-lvl2/workflows/python-package/badge.svg)](https://github.com/Nidenai/python-project-lvl2/actions)
 
-        
+gendiff        
 [![asciicast](https://asciinema.org/a/CEMfCZGP6srPQMWcUep5ggi8W.svg)](https://asciinema.org/a/CEMfCZGP6srPQMWcUep5ggi8W)
 
-
+gendiff yaml
 [![asciicast](https://asciinema.org/a/60Nf8I8swP0SzSnfTNAIciFux.svg)](https://asciinema.org/a/60Nf8I8swP0SzSnfTNAIciFux)
+
+gendiff recursive file
+[![asciicast](https://asciinema.org/a/FNYGkM8PfwHEJgqWzOGwWJZqp.svg)](https://asciinema.org/a/FNYGkM8PfwHEJgqWzOGwWJZqp)
+
+genfiff plain format
+[![asciicast](https://asciinema.org/a/4CmrQjZaWqh6OxItUy614rrqK.svg)](https://asciinema.org/a/4CmrQjZaWqh6OxItUy614rrqK)
