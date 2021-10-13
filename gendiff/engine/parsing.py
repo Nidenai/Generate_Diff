@@ -2,7 +2,7 @@ import json
 import yaml
 
 
-def generate_diff(file_one, file_two):
+def generate_differenses(file_one, file_two):
     if file_one[-1] == 'n':
         insert_data = is_json(file_one, file_two)
     else:

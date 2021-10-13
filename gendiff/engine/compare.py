@@ -1,5 +1,5 @@
 import argparse
-from gendiff.engine.parsing import generate_diff
+from gendiff.engine.parsing import generate_differenses
 from gendiff.formats import stylish
 from gendiff.formats import json
 from gendiff.formats import plain
@@ -28,10 +28,10 @@ def generation(file1, file2, format_name='stylish'):
 
 
 def parsing(file1, file2):
-    return generate_diff(file1, file2)
+    return generate_differenses(file1, file2)
 
 
-def run():
+def generate_diff():
     parser = gendiff()
     diff = generation(
         parser.first_file,

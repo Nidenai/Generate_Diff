@@ -1,8 +1,8 @@
-from gendiff.engine.compare import run
+from gendiff.engine.compare import generate_diff
 
 
 def main():
-    run()
+    generate_diff()
 
 
 if __name__ == '__main__':
