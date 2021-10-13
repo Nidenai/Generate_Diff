@@ -3,7 +3,7 @@ from gendiff.engine.parsing import generate_differenses
 from gendiff.formats import stylish
 from gendiff.formats import json
 from gendiff.formats import plain
-from gendiff.engine.engine import get_data
+from gendiff.cli import get_data
 
 FORMATS = {
     "stylish": stylish.render,
