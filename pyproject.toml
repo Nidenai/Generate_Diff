@@ -14,6 +14,7 @@ gendiff = "gendiff.scripts.gendiff:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+pyyml = "^0.0.2"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.5.7"

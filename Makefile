@@ -38,6 +38,7 @@ start:
 	export PATH="$HOME/.local/bin:$PATH"
 
 
+
 go_yaml:
 	poetry run gendiff -f stylish examples/file_one.yaml examples/file_two.yaml
 
