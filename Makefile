@@ -25,18 +25,9 @@ all:
 	make package-install
 
 
-go:
-	poetry run gendiff -f stylish examples/file_one.json examples/file_two.json
-
-
-gogo:
-	poetry run gendiff -f stylish examples/file1_rec.json examples/file2_rec.json
-
-
 start:
 	export PATH="$HOME/.poetry/bin:$PATH"
 	export PATH="$HOME/.local/bin:$PATH"
-
 
 
 go_yaml:
