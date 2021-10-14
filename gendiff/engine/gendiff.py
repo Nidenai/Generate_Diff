@@ -12,7 +12,7 @@ FORMATS = {
 }
 
 
-def gendiff():
+def generation():
     parser = argparse.ArgumentParser(description='Generate diff')
     parser.add_argument('first_file')
     parser.add_argument('second_file')
@@ -22,7 +22,7 @@ def gendiff():
     return args
 
 
-def generation(file1, file2, format_name='stylish'):
+def generate_diff(file1, file2, format_name='stylish'):
     file1, file2 = parsing(file1, file2)
     return FORMATS[format_name](get_data(file1, file2))
 
@@ -31,9 +31,9 @@ def parsing(file1, file2):
     return generate_differenses(file1, file2)
 
 
-def generate_diff():
-    parser = gendiff()
-    diff = generation(
+def gendiff():
+    parser = generation()
+    diff = generate_diff(
         parser.first_file,
         parser.second_file,
         parser.format
