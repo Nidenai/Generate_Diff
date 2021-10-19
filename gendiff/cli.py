@@ -1,3 +1,17 @@
+import argparse
+from gendiff.formats.var import FORMATS
+
+
+def generation():
+    parser = argparse.ArgumentParser(description='Generate diff')
+    parser.add_argument('first_file')
+    parser.add_argument('second_file')
+    parser.add_argument("-f", "--format", choices=FORMATS.keys(), default="stylish", help='output format (default: "stylish")')
+    parser.add_argument("-V", "--version", action="version", version="%(prog)s 0.10.2")
+    args = parser.parse_args()
+    return args
+
+
 def get_data(file1, file2):
     result = {}
     keys = sorted(set(file1) | set(file2))
