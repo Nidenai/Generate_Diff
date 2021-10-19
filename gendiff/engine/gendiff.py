@@ -1,4 +1,4 @@
-from gendiff.engine.parsing import parse
+from gendiff.engine.parser import parse
 from gendiff.formats.var import FORMATS
 from gendiff.cli import get_data
 
