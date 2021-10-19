@@ -29,13 +29,3 @@ def generate_diff(file1, file2, format_name='stylish'):
 
 def parsing(file1, file2):
     return generate_differenses(file1, file2)
-
-
-def gendiff():
-    parser = generation()
-    diff = generate_diff(
-        parser.first_file,
-        parser.second_file,
-        parser.format
-    )
-    print(diff)
