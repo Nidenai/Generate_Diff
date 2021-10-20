@@ -1,4 +1,4 @@
-from gendiff.engine.gendiff import generate_diff
+from gendiff.cli import generate_diff
 
 
 

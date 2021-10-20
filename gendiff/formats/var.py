@@ -1,7 +1,4 @@
-from gendiff.formats import stylish
-from gendiff.formats import json
-from gendiff.formats import plain
-
+from gendiff.formats import json, plain, stylish
 
 FORMATS = {
     "stylish": stylish.render,

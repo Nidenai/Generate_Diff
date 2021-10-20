@@ -1,15 +1,15 @@
-from gendiff.engine import gendiff
-from gendiff.cli import generation
+from gendiff.cli import generate_diff, generation
 
 
 def main():
     parser = generation()
-    diff = gendiff.generate_diff(
+    diff = generate_diff(
         parser.first_file,
         parser.second_file,
         parser.format
     )
     print(diff)
+
 
 if __name__ == '__main__':
     main()
