@@ -37,10 +37,6 @@ def test_json():
     assert result == test_result
 
 
-test_json()
-test_base()
-test_rec()
-
 
 
 
