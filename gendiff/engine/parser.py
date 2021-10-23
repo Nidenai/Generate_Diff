@@ -7,8 +7,8 @@ def parse(file1, file2):
         arg1 = json.load(open(file1))
         arg2 = json.load(open(file2))
     elif is_yaml(file1, file2):
-        arg1 = yaml.safe_load(open(file1), Loader=yaml.FullLoader)
-        arg2 = yaml.safe_load(open(file2), Loader=yaml.FullLoader)
+        arg1 = yaml.load(open(file1), Loader=yaml.FullLoader)
+        arg2 = yaml.load(open(file2), Loader=yaml.FullLoader)
 
     return arg1, arg2
 
