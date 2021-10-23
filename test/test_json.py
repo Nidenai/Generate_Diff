@@ -35,13 +35,3 @@ def test_json():
     result = file_for_read.read()
     test_result = generate_diff(path_one, path_two, format_name='json')
     assert result == test_result
-
-
-
-
-
-
-
-
-
-
