@@ -1,8 +1,9 @@
-from gendiff.cli import generate_diff, generation
+from gendiff.cli import parse
+from gendiff.engine.differ import generate_diff
 
 
 def main():
-    parser = generation()
+    parser = parse()
     diff = generate_diff(
         parser.first_file,
         parser.second_file,

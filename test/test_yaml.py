@@ -1,4 +1,4 @@
-from gendiff.cli import generate_diff
+from gendiff.engine.differ import generate_diff
 
 
 def test_base():
