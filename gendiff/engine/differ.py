@@ -8,18 +8,20 @@ def get_diff(data1, data2):
     for key in keys:
         v1, v2 = data1.get(key), data2.get(key)
         if key in data1 and key not in data2:
-            status = 'removed'
-            value = ["value", v2]
+            status = "removed"
+            value = ["value", v1]
         elif key in data2 and key not in data1:
-            status = 'added'
+            status = "added"
             value = ["value", v2]
-        elif key in data1 and key in data2:
-            if v1 == v2:
-                status = 'no change'
-                value = ["value", v1]
-            else:
-                status = 'changed'
-                value = [['value', v1], ['value', v2]]
+        elif v1 == v2:
+            status = "no change"
+            value = ["value", v1]
+        elif isinstance(v1, dict) and isinstance(v2, dict):
+            status = "no change"
+            value = ["children", get_diff(v1, v2)]
+        else:
+            status = "changed"
+            value = [["value", v1], ["value", v2]]
         result[(status, key)] = value
     return result
 
