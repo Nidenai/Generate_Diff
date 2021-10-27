@@ -2,38 +2,25 @@ from gendiff.engine.parser import parse
 from gendiff.formats.var import FORMATS
 
 
-def get_diff(file1, file2):
+def get_diff(data1, data2):
     result = {}
-    keys = sorted(set(file1) | set(file2))
+    keys = sorted(data1.keys() | data2.keys())
     for key in keys:
-        v1, v2 = file1.get(key), file2.get(key)
-        if key in file1 and key not in file2:
+        v1, v2 = data1.get(key), data2.get(key)
+        if key in data1 and key not in data2:
             status = 'removed'
-            result[(status, key)] = ["value", v1]
-        if key in file2 and key not in file1:
+            value = ["value", v2]
+        elif key in data2 and key not in data1:
             status = 'added'
-            result[(status, key)] = ["value", v2]
-        if key in file1 and key in file2:
+            value = ["value", v2]
+        elif key in data1 and key in data2:
             if v1 == v2:
                 status = 'no change'
-                if isinstance(v1, dict):
-                    status = 'children'
-                    result[(status, key)] = ['children', get_diff(v1, v2)]
-                else:
-                    result[(status, key)] = ["value", v1]
+                value = ["value", v1]
             else:
                 status = 'changed'
-                if isinstance(v1, dict) and isinstance(v2, dict):
-                    status = 'no change'
-                    result[(status, key)] = ['no change', get_diff(v1, v2)]
-                elif isinstance(v1, dict):
-                    result[(status, key)] = [['children', get_diff(v1, v1)],
-                                             ['value', v2]]
-                elif isinstance(v2, dict):
-                    result[(status, key)] = [['value', v1],
-                                             ['children', get_diff(v2, v2)]]
-                else:
-                    result[(status, key)] = [['value', v1], ['value', v2]]
+                value = [['value', v1], ['value', v2]]
+        result[(status, key)] = value
     return result
 
 
