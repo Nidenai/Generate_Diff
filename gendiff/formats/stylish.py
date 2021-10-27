@@ -49,4 +49,4 @@ def edit_message(message):
 
 
 def render(data):
-    return edit_message(to_string(format(data)))
+    return to_string(format(data))
