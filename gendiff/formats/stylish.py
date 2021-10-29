@@ -1,6 +1,4 @@
 from gendiff.formats.edit_message import edit_message
-
-
 STATUS = {
     "added": "  + ",
     "removed": "  - ",
@@ -10,6 +8,7 @@ STATUS = {
 
 def format(data):
     result = {}
+
     def unpach_values(value, value_type):
         if value_type == "children":
             return format(value)

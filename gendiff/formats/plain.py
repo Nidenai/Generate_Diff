@@ -7,6 +7,7 @@ def render(data):
 
 def format(data, key_path=""):
     result = []
+
     def unpach_values(*args):
         if isinstance(args, dict):
             return "[complex value]"

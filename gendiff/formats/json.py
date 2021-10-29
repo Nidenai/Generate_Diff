@@ -7,6 +7,7 @@ def render(data):
 
 def format(data):
     result = {}
+
     def check_value(*args):
         for item in args:
             value_type, value = item
@@ -25,4 +26,3 @@ def format(data):
                 value = [status, check_value(data[item])]
         result[key] = value
     return result
-
