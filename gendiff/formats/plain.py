@@ -1,9 +1,18 @@
+from gendiff.formats.edit_message import edit_message
+
+
 def render(data):
     return edit_message(to_string(format(data)))
 
 
 def format(data, key_path=""):
     result = []
+    def unpach_values(value):
+        if isinstance(value, dict):
+            return "[complex value]"
+        elif isinstance(value, str):
+            return f"'{value}'"
+        return value
     for item in data.keys():
         status = item[0]
         key = key_path + item[1]
@@ -25,23 +34,5 @@ def format(data, key_path=""):
     return result
 
 
-def unpach_values(value):
-    if isinstance(value, dict):
-        return "[complex value]"
-    elif isinstance(value, str):
-        return f"'{value}'"
-    return value
-
-
 def to_string(data):
     return "\n".join(data)
-
-
-def edit_message(message):
-    if "False" in message:
-        message = message.replace("False", "false")
-    if "True" in message:
-        message = message.replace("True", "true")
-    if "None" in message:
-        message = message.replace("None", "null")
-    return message

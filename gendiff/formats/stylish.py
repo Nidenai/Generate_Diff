@@ -1,3 +1,6 @@
+from gendiff.formats.edit_message import edit_message
+
+
 STATUS = {
     "added": "  + ",
     "removed": "  - ",
@@ -34,16 +37,6 @@ def to_string(data, lvl=0):
         result += f"{'    ' * lvl}{key}: {value}\n"
     result += f"{'    ' * lvl}}}"
     return edit_message(result)
-
-
-def edit_message(message):
-    if "False" in message:
-        message = message.replace("False", "false")
-    if "True" in message:
-        message = message.replace("True", "true")
-    if "None" in message:
-        message = message.replace("None", "null")
-    return message
 
 
 def render(data):
