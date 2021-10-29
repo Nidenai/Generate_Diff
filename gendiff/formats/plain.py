@@ -8,12 +8,12 @@ def render(data):
 def format(data, key_path=""):
     result = []
 
-    def unpach_values(*args):
-        if isinstance(args, dict):
+    def unpach_values(value):
+        if isinstance(value, dict):
             return "[complex value]"
-        elif isinstance(args, str):
-            return f"'{args}'"
-        return args
+        elif isinstance(value, str):
+            return f"'{value}'"
+        return value
     for item in data.keys():
         status = item[0]
         key = key_path + item[1]
@@ -23,7 +23,8 @@ def format(data, key_path=""):
         elif status == "removed":
             result.append(f"Property '{key}' was removed")
         elif status == "changed":
-            old_value, new_value = unpach_values(data[item][0][1], (data[item][1][1]))
+            old_value = unpach_values(data[item][0][1])
+            new_value = unpach_values(data[item][1][1])
             result.append(
                 f"Property '{key}' was updated. From {old_value} to {new_value}"
             )
