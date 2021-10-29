@@ -7,6 +7,10 @@ STATUS = {
 
 def format(data):
     result = {}
+    def unpach_values(value, value_type):
+        if value_type == "children":
+            return format(value)
+        return value
     for item in data.keys():
         status, key = item
         if status == "changed":
@@ -20,12 +24,6 @@ def format(data):
             value_type, value = data[item]
             result[STATUS[status] + key] = unpach_values(value, value_type)
     return result
-
-
-def unpach_values(value, value_type):
-    if value_type == "children":
-        return format(value)
-    return value
 
 
 def to_string(data, lvl=0):

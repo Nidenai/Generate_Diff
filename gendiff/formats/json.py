@@ -7,33 +7,22 @@ def render(data):
 
 def format(data):
     result = {}
+    def check_value(*args):
+        for item in args:
+            value_type, value = item
+            if value_type == "children":
+                args = format(value)
+        return args
     for item in data.keys():
         status, key = item
         if status == "changed":
-            value_type_old, value_old = data[item][0]
-            if value_type_old == 'children':
-                old = format(value_old)
-            else:
-                old = value_old
-            value_type_new, value_new = data[item][1]
-            if value_type_new == 'children':
-                new = format(value_new)
-            else:
-                new = value_new
+            old, new = check_value(data[item][0], data[item][1])
             value = ["updated", old, new]
         else:
             if status == "no change":
-                value_type, value_value = data[item]
-                if value_type == "children":
-                    value = format(value_value)
-                else:
-                    value = value_value
+                value = check_value(data[item])
             else:
-                value_type, value_value = data[item]
-                if value_type == "children":
-                    middle_result = format(value_value)
-                else:
-                    middle_result = value_value
-                value = [status, middle_result]
+                value = [status, check_value(data[item])]
         result[key] = value
     return result
+
