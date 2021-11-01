@@ -1,8 +1,9 @@
-from test_json import test_json, test_base, test_plain
+import test_json
 
 
 def test_all():
-    test_base()
+    #test_json.test_base()
+    test_json.test_rec()
 
 
 test_all()

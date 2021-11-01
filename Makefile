@@ -29,10 +29,9 @@ start:
 	export PATH="$HOME/.poetry/bin:$PATH"
 	export PATH="$HOME/.local/bin:$PATH"
 
-test:
+
+testing:
 	python3 test/test_all.py
-
-
 
 
 

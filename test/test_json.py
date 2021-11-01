@@ -2,7 +2,7 @@ from gendiff.engine.differ import generate_diff
 
 
 def test_base():
-    file_for_read = open('test/fixtures/test_file_json.txt')
+    file_for_read = open('test/fixtures/test_diff_json.txt')
     path_one = 'test/fixtures/examples/file1.json'
     path_two = 'test/fixtures/examples/file2.json'
     result = file_for_read.read()
@@ -11,12 +11,15 @@ def test_base():
 
 
 def test_rec():
-    file_for_read = open('test/fixtures/test_rec_json.txt')
+    file_for_read = open('test/fixtures/test_diff_json_rec.txt')
     path_one = 'test/fixtures/examples/file1_rec.json'
     path_two = 'test/fixtures/examples/file2_rec.json'
     result = file_for_read.read()
     test_result = generate_diff(path_one, path_two)
+    print(result)
+    print(test_result)
     assert test_result == result
+
 
 
 def test_plain():

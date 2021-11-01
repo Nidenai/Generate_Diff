@@ -8,23 +8,18 @@ STATUS = {
 
 def format(data):
     result = {}
-
-    def unpach_values(value, value_type):
-        if value_type == "children":
-            return format(value)
-        return value
-    for item in data.keys():
-        status, key = item
-        if status == "changed":
-            old_value_type, old_value = data[item][0]
-            new_value_type, new_value = data[item][1]
-            result[STATUS["removed"] + key] = unpach_values(
-                old_value, old_value_type)
-            result[STATUS["added"] + key] = unpach_values(
-                new_value, new_value_type)
+    for head, body in data.items():
+        status, key = head
+        type_, value = body
+        if type_ == 'children':
+            result[STATUS[status] + key] = format(value)
+        elif status == "changed":
+            old_value_type, old_value = body[0]
+            new_value_type, new_value = body[1]
+            result[STATUS["removed"] + key] = old_value
+            result[STATUS["added"] + key] = new_value
         else:
-            value_type, value = data[item]
-            result[STATUS[status] + key] = unpach_values(value, value_type)
+            result[STATUS[status] + key] = value
     return result
 
 
