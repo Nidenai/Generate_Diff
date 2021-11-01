@@ -17,10 +17,10 @@ def format(data):
         elif status == "changed":
             old_value_type, old_value = body[0]
             new_value_type, new_value = body[1]
-            result[STATUS["removed"] + key] = convert_value(old_value)
-            result[STATUS["added"] + key] = convert_value(new_value)
+            result[STATUS["removed"] + key] = old_value
+            result[STATUS["added"] + key] = new_value
         else:
-            result[STATUS[status] + key] = convert_value(value)
+            result[STATUS[status] + key] = value
     return result
 
 
@@ -28,7 +28,7 @@ def to_string(data, lvl=0):
     result = "{\n"
     for key, value in data.items():
         if isinstance(value, dict):
-            value = to_string(value, lvl + 1)
+            value = to_string(value, lvl + 2)
         result += f"{'    ' * lvl}{key}: {value}\n"
     result += f"{'    ' * lvl}}}"
     return edit_message(result)
@@ -36,12 +36,3 @@ def to_string(data, lvl=0):
 
 def render(data):
     return edit_message(to_string(format(data)))
-
-
-def convert_value(data):
-    if isinstance(data, dict):
-        for key, value in data.items():
-            if isinstance(value, dict):
-                convert_value(value)
-            return '{}\n\t\t{}:{}\n\t{}'.format('{', key, value, '}')
-    return data
