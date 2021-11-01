@@ -36,3 +36,13 @@ def to_string(data, lvl=0):
 
 def render(data):
     return edit_message(to_string(format(data)))
+
+
+def convert_value(data):
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if isinstance(value, dict):
+                convert_value(value)
+            else:
+                return '{}\n\t{}:{}\n\t{}'.format('{', key, value, '}')
+    return data
