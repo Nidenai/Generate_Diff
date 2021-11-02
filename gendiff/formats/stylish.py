@@ -43,5 +43,5 @@ def convert_value(data):
         for key, value in data.items():
             if isinstance(value, dict):
                 convert_value(value)
-            return '{}\n\t{}:{}\n\t{}'.format('{', key, value, '}')
+            return '{}\n  {}:{}\n{}'.format('{', key, value, '}')
     return data
