@@ -23,7 +23,7 @@ def test_rec():
 
 
 def test_plain():
-    file_for_read = open('test/fixtures/test_json_plain.txt')
+    file_for_read = open('test/fixtures/test_diff_json_plain.txt')
     path_one = 'test/fixtures/examples/file1_rec.json'
     path_two = 'test/fixtures/examples/file2_rec.json'
     result = file_for_read.read()
@@ -32,7 +32,7 @@ def test_plain():
 
 
 def test_json():
-    file_for_read = open('test/fixtures/test_json_json.txt')
+    file_for_read = open('test/fixtures/test_diff_json_json.txt')
     path_one = 'test/fixtures/examples/file1_rec.json'
     path_two = 'test/fixtures/examples/file2_rec.json'
     result = file_for_read.read()
