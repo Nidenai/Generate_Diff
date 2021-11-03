@@ -45,6 +45,6 @@ def convert_value(data):
             new_key = '    {}'.format(key)
             result[new_key] = value
             if isinstance(value, dict):
-               result[key] = convert_value(value)
+               result[new_key] = convert_value(value)
         return result
     return data
