@@ -38,13 +38,12 @@ def render(data):
     return edit_message(to_string(format(data)))
 
 
-def convert_value(data):
-    if isinstance(data, dict):
-        result = {}
-        for key, value in data.items():
-            new_key = '  {}'.format(key)
-            result[new_key] = value
-            if isinstance(value, dict):
-               result[new_key] = convert_value(value)
-        return result
-    return data
+def convert_value(v):
+    if not isinstance(v, dict):
+        return v
+
+    result = {}
+    for key, value in v.items():
+        new_key = '   {}'.format(key)
+        result[new_key] = convert_value(value)
+    return result
