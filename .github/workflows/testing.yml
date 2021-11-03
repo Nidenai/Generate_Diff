@@ -1,5 +1,5 @@
 
-name: python-package
+name: automatic-tests
 
 on:
   - push
