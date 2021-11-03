@@ -42,7 +42,7 @@ def convert_value(data):
     if isinstance(data, dict):
         result = {}
         for key, value in data.items():
-            new_key = '    {}'.format(key)
+            new_key = ' {}'.format(key)
             result[new_key] = value
             if isinstance(value, dict):
                result[new_key] = convert_value(value)
