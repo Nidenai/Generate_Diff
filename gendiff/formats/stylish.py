@@ -17,10 +17,10 @@ def format(data):
         elif status == "changed":
             old_value_type, old_value = body[0]
             new_value_type, new_value = body[1]
-            result[STATUS["removed"] + key] = old_value
-            result[STATUS["added"] + key] = new_value
+            result[STATUS["removed"] + key] = convert_value(old_value)
+            result[STATUS["added"] + key] = convert_value(new_value)
         else:
-            result[STATUS[status] + key] = value
+            result[STATUS[status] + key] = convert_value(value)
     return result
 
 
@@ -42,6 +42,6 @@ def convert_value(data):
     if isinstance(data, dict):
         for key, value in data.items():
             if isinstance(value, dict):
-                convert_value(value)
-            return '{}\n  {}:{}\n{}'.format('{', key, value, '}')
+                return '{}\n\t\t{}:{}\n\t\t\t{}\n\t\t{}'.format('{', key, '{', value, '}')
+            return '{}\n\t\t{}:{}\n\t{}'.format('{', key, value, '}')
     return data
