@@ -40,8 +40,11 @@ def render(data):
 
 def convert_value(data):
     if isinstance(data, dict):
+        result = {}
         for key, value in data.items():
+            new_key = '    {}'.format(key)
+            result[new_key] = value
             if isinstance(value, dict):
-                return '{}\n\t\t{}:{}\n\t\t\t{}\n\t\t{}'.format('{', key, '{', value, '}')
-            return '{}\n\t\t{}:{}\n\t{}'.format('{', key, value, '}')
+               result[key] = convert_value(value)
+        return result
     return data
