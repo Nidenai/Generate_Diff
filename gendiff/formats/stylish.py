@@ -29,8 +29,8 @@ def to_string(data, lvl=0):
     for key, value in data.items():
         if isinstance(value, dict):
             value = to_string(value, lvl + 1)
-        result += f"{'    ' * lvl}{key}: {value}\n"
-    result += f"{'    ' * lvl}}}"
+        result += f"{'   ' * lvl}{key}: {value}\n"
+    result += f"{'   ' * lvl}}}"
     return edit_message(result)
 
 
