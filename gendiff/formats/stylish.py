@@ -44,6 +44,6 @@ def convert_value(v):
 
     result = {}
     for key, value in v.items():
-        new_key = '   {}'.format(key)
+        new_key = '  {}'.format(key)
         result[new_key] = convert_value(value)
     return result
