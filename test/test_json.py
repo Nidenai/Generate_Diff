@@ -21,7 +21,6 @@ def test_rec():
     assert test_result == result
 
 
-
 def test_plain():
     file_for_read = open('test/fixtures/test_diff_json_plain.txt')
     path_one = 'test/fixtures/examples/file1_rec.json'
