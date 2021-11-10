@@ -1,6 +1,5 @@
 from gendiff.formats.edit_message import edit_message
 
-
 STATUS = {
     "added": "  + ",
     "removed": "  - ",

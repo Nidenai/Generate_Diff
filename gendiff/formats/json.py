@@ -18,7 +18,7 @@ def format(data):
         status, key = item
         if status == "changed":
             old, new = check_value(data[item][0], data[item][1])
-            value = ["updated", old, new] 
+            value = ["updated", old, new]
         else:
             if status == "no change":
                 value = check_value(data[item])
