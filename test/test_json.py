@@ -9,13 +9,6 @@ def test_base():
     assert result == test_result
 
 
-def test_rec():
-    file_for_read = open(DIFF_REC)
-    result = file_for_read.read()
-    test_result = generate_diff(FILE_JSON_REC1, FILE_JSON_REC2)
-    assert test_result == result
-
-
 def test_plain():
     file_for_read = open(DIFF_PLAIN)
     result = file_for_read.read()
