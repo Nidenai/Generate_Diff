@@ -7,13 +7,6 @@ def render(data):
 
 def format(data, key_path=""):
     result = []
-
-    def unpach_values(value):
-        if isinstance(value, dict):
-            return "[complex value]"
-        elif isinstance(value, str):
-            return f"'{value}'"
-        return value
     for item in data.keys():
         status = item[0]
         key = key_path + item[1]
@@ -33,6 +26,14 @@ def format(data, key_path=""):
             if value_type == "children":
                 result.extend(format(value, key + "."))
     return result
+
+
+def unpach_values(value):
+    if isinstance(value, dict):
+        return "[complex value]"
+    elif isinstance(value, str):
+        return f"'{value}'"
+    return value
 
 
 def to_string(data):
