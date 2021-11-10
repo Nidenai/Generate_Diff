@@ -30,8 +30,8 @@ start:
 	export PATH="$HOME/.local/bin:$PATH"
 
 
-testing:
-	python3 test/test_all.py
+coverage:
+	poetry run coverage run -m pytest -v
 
 
 
