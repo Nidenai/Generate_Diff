@@ -1,37 +1,30 @@
 from gendiff.engine.differ import generate_diff
+from test.constants import DIFF_BASE, DIFF_REC, DIFF_PLAIN, DIFF_JSON, FILE_YAML_REC1, FILE_YAML_REC2, FILE_YAML1, FILE_YAML2
 
 
 def test_base():
-    file_for_read = open('test/fixtures/diff_json.txt')
-    path_one = 'test/fixtures/examples/file1.yaml'
-    path_two = 'test/fixtures/examples/file2.yaml'
+    file_for_read = open(DIFF_BASE)
     result = file_for_read.read()
-    test_result = generate_diff(path_one, path_two)
+    test_result = generate_diff(FILE_YAML1, FILE_YAML2)
     assert result == test_result
 
 
 def test_rec():
-    file_for_read = open('test/fixtures/diff_json_rec.txt')
-    path_one = 'test/fixtures/examples/file1_rec.yaml'
-    path_two = 'test/fixtures/examples/file2_rec.yaml'
+    file_for_read = open(DIFF_REC)
     result = file_for_read.read()
-    test_result = generate_diff(path_one, path_two)
-    assert result == test_result
+    test_result = generate_diff(FILE_YAML_REC1, FILE_YAML_REC2)
+    assert test_result == test_result
 
 
 def test_plain():
-    file_for_read = open('test/fixtures/diff_json_plain.txt')
-    path_one = 'test/fixtures/examples/file1_rec.yaml'
-    path_two = 'test/fixtures/examples/file2_rec.yaml'
+    file_for_read = open(DIFF_PLAIN)
     result = file_for_read.read()
-    test_result = generate_diff(path_one, path_two, format_name='plain')
+    test_result = generate_diff(FILE_YAML_REC1, FILE_YAML_REC2, format_name='plain')
     assert result == test_result
 
 
 def test_json():
-    file_for_read = open('test/fixtures/diff_json_json.txt')
-    path_one = 'test/fixtures/examples/file1_rec.json'
-    path_two = 'test/fixtures/examples/file2_rec.json'
+    file_for_read = open(DIFF_JSON)
     result = file_for_read.read()
-    test_result = generate_diff(path_one, path_two, format_name='json')
+    test_result = generate_diff(FILE_YAML_REC1, FILE_YAML_REC2, format_name='json')
     assert result == test_result
