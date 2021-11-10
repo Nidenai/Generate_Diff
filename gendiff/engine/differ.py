@@ -27,5 +27,6 @@ def get_diff(data1, data2):
 
 
 def generate_diff(file1, file2, format_name='stylish'):
-    file1, file2 = parse(file1, file2)
+    file1 = parse(file1)
+    file2 = parse(file2)
     return FORMATS[format_name](get_diff(file1, file2))
