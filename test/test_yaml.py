@@ -13,7 +13,7 @@ def test_rec():
     file_for_read = open(DIFF_REC)
     result = file_for_read.read()
     test_result = generate_diff(FILE_YAML_REC1, FILE_YAML_REC2)
-    assert test_result == test_result
+    assert test_result == result
 
 
 def test_plain():
