@@ -1,5 +1,5 @@
 from gendiff.engine.differ import generate_diff
-from test.constants import DIFF_BASE, DIFF_REC, DIFF_PLAIN, DIFF_JSON, FILE_YAML_REC1, FILE_YAML_REC2, FILE_YAML1, FILE_YAML2
+from test.constants import DIFF_BASE, DIFF_PLAIN, DIFF_JSON, FILE_YAML_REC1, FILE_YAML_REC2, FILE_YAML1, FILE_YAML2
 
 
 def test_base():
