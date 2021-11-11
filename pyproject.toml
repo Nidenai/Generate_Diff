@@ -20,6 +20,7 @@ coverage = "^6.1.2"
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.5.7"
 pytest = "^6.2.3"
+pytest-cov = "^2.11.1"
 wemake-python-styleguide = "^0.15.2"
 coverage = "^6.1.2"
 
