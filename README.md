@@ -6,6 +6,10 @@
 
 [![Actions Status](https://github.com/Nidenai/python-project-lvl2/workflows/python-package/badge.svg)](https://github.com/Nidenai/python-project-lvl2/actions)
 
+
+[![Actions Status](https://github.com/Nidenai/python-project-lvl2/workflows/coverage/badge.svg)](https://github.com/Nidenai/python-project-lvl2/actions)
+
+
 gendiff        
 [![asciicast](https://asciinema.org/a/CEMfCZGP6srPQMWcUep5ggi8W.svg)](https://asciinema.org/a/CEMfCZGP6srPQMWcUep5ggi8W)
 
