@@ -21,10 +21,3 @@ def test_json():
     result = file_for_read.read()
     test_result = generate_diff(FILE_JSON_REC1, FILE_JSON_REC2, format_name='json')
     assert result == test_result
-
-
-def test_rec():
-    file_for_read = open(DIFF_REC)
-    result = file_for_read.read()
-    test_result = generate_diff(FILE_JSON_REC1, FILE_JSON_REC2)
-    assert result == test_result

@@ -30,7 +30,8 @@ coverage:
 
 
 testing:
-	poetry run coverage run --source=gendiff -m pytest tests
+	poetry run coverage run -m pytest -v
+
 
 
 
