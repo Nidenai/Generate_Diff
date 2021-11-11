@@ -7,13 +7,6 @@ def render(data):
 
 def format(data):
     result = {}
-
-    def check_value(*args):
-        for item in args:
-            value_type, value = item
-            if value_type == "children":
-                args = format(value)
-        return args
     for item in data.keys():
         status, key = item
         if status == "changed":
@@ -26,3 +19,11 @@ def format(data):
                 value = [status, check_value(data[item])]
         result[key] = value
     return result
+
+
+def check_value(*args):
+    for item in args:
+        value_type, value = item
+        if value_type == "children":
+            args = format(value)
+    return args
