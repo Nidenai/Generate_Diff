@@ -21,3 +21,6 @@ gendiff recursive file
 
 genfiff plain format
 [![asciicast](https://asciinema.org/a/4CmrQjZaWqh6OxItUy614rrqK.svg)](https://asciinema.org/a/4CmrQjZaWqh6OxItUy614rrqK)
+
+gendiff json format
+[![asciicast](https://asciinema.org/a/LuS3K4gVlVlzpCY4dPVnh87vI.svg)](https://asciinema.org/a/LuS3K4gVlVlzpCY4dPVnh87vI)
