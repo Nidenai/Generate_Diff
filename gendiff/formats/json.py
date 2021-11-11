@@ -26,6 +26,3 @@ def format(data):
                 value = [status, check_value(data[item])]
         result[key] = value
     return result
-
-
-
