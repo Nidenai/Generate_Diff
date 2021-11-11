@@ -7,7 +7,7 @@
 [![Actions Status](https://github.com/Nidenai/python-project-lvl2/workflows/python-package/badge.svg)](https://github.com/Nidenai/python-project-lvl2/actions)
 
 
-[![Actions Status](https://github.com/Nidenai/python-project-lvl2/workflows/coverage/badge.svg)](https://github.com/Nidenai/python-project-lvl2/actions)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/70e3a300c544347cf169/test_coverage)](https://codeclimate.com/github/Nidenai/python-project-lvl2/test_coverage)
 
 
 gendiff        
