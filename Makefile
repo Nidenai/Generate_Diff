@@ -25,16 +25,12 @@ all:
 	make package-install
 
 
-start:
-	export PATH="$HOME/.poetry/bin:$PATH"
-	export PATH="$HOME/.local/bin:$PATH"
-
-
 coverage:
 	poetry run coverage xml
 
-test:
-	poetry run coverage run -m pytest -v
+
+testing:
+	poetry run coverage run --source=gendiff -m pytest tests
 
 
 
