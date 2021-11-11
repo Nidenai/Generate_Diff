@@ -31,6 +31,9 @@ start:
 
 
 coverage:
+	poetry run coverage xml
+
+test:
 	poetry run coverage run -m pytest -v
 
 
