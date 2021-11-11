@@ -22,7 +22,7 @@ jobs:
         run: |
           make test
       - name:  Coverage report
-        uses: paambaati/codeclimate-action@v2.7.5
+        uses: nidenai/codeclimate-action@v2.7.5
         env:
           CC_TEST_REPORTER_ID: 4937d3925d4abc4bfc1f5e8e2d5ddb10501f331ae05781e5e0d8d141b2d96be5
         with:
